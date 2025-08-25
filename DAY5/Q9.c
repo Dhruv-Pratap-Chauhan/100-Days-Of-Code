@@ -15,15 +15,25 @@ Simple Interest=1050, Compound Interest=1125.76
 */
 
 #include <stdio.h>
-int main()
-{
-    int p, r, t;
-    float s, c;
+#include <math.h>
 
-    printf("Enter principal, rate and time[in years] [in correct order with spaces respectively]: ");
-    scanf("%d %d %d", &p, &r, &t);
+int main() {
+    float p, r, t, s, c;
 
-    printf("Simple interest: %f/n", s, s = (p * r * t) / 100.0);
+    printf("Enter principal: ");
+    scanf("%f", &p);
+
+    printf("Enter rate: ");
+    scanf("%f", &r);
+
+    printf("Enter time: ");
+    scanf("%f", &t);
+
+    s = (p * r * t) / 100.0;
+    printf("Simple interest: %f\n", s);
+
+    c = p * (pow((1 + r / 100.0), t)) - p;
+    printf("Compound interest: %f\n", c);
 
     return 0;
 }
