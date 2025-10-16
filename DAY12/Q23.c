@@ -1,39 +1,27 @@
 #include <stdio.h>
-int main ()
-{
-    int per;
-    printf ("enter percentage of a student ");
-    scanf ("%d",&per);
 
-    if (per >= 90 && per <=100)
-    {
-        printf ("excellent");
+int main() {
+    int days;
+    int fine = 0;
+
+    printf("Enter number of late days: ");
+    scanf("%d", &days);
+
+    if (days <= 5) {
+        fine = days * 2;
+        printf("Fine ₹%d\n", fine);
+    } 
+    else if (days <= 10) {
+        fine = (5 * 2) + ((days - 5) * 4);
+        printf("Fine ₹%d\n", fine);
+    } 
+    else if (days <= 30) {
+        fine = (5 * 2) + (5 * 4) + ((days - 10) * 6);
+        printf("Fine ₹%d\n", fine);
+    } 
+    else {
+        printf("Membership Cancelled\n");
     }
-    else if (per >=80 && per < 90)
-    {
-        printf ("Very good");
-    }
-    else if (per >=70 && per < 80)
-    {
-        printf ("good");
-    }
-    else if (per >=60 && per < 70)
-    {
-        printf ("can do better");
-    }
-    else if (per >=50 && per < 60)
-    {
-        printf ("Average");
-    }
-    else if (per >=40 && per < 50)
-    {
-        printf ("Below Average");
-    }
-    else if (per >=0 && per < 40)
-    {
-        printf ("Fail");
-    }
-    else 
-        printf ("entered a vaild percentage");
+
     return 0;
 }
