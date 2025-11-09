@@ -1,23 +1,17 @@
 #include <stdio.h>
+
 int main() {
-    int n, x;
-    scanf("%d", &n);
+    int n, x, ceilIndex=-1;
+    printf("Enter number of elements in sorted array: ");
+    scanf("%d",&n);
     int arr[n];
-    for (int i = 0; i < n; i++)
-        scanf("%d", &arr[i]);
-    scanf("%d", &x);
-
-    int low = 0, high = n - 1, ans = -1;
-    while (low <= high) {
-        int mid = (low + high) / 2;
-        if (arr[mid] >= x) {
-            ans = mid;
-            high = mid - 1;
-        } else {
-            low = mid + 1;
-        }
+    printf("Enter the elements in sorted order: ");
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    printf("Enter element x to find ceil: ");
+    scanf("%d",&x);
+    for(int i=0;i<n;i++){
+        if(arr[i]>=x){ ceilIndex=i; break; }
     }
-
-    printf("%d\n", ans);
+    printf("Ceil index: %d\n", ceilIndex);
     return 0;
 }
