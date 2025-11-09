@@ -2,17 +2,16 @@
 
 int main() {
     int n;
-    scanf("%d", &n);
-    int a[n];
-    for (int i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-    int max = a[0], min = a[0];
-    for (int i = 1; i < n; i++) {
-        if (a[i] > max)
-            max = a[i];
-        if (a[i] < min)
-            min = a[i];
+    printf("Enter number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter elements: ");
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    int max=arr[0], min=arr[0];
+    for(int i=1;i<n;i++){
+        if(arr[i]>max) max=arr[i];
+        if(arr[i]<min) min=arr[i];
     }
-    printf("Max=%d, Min=%d", max, min);
+    printf("Max=%d, Min=%d\n", max, min);
     return 0;
 }

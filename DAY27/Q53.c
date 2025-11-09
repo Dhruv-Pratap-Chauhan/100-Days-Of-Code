@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int i, j;
-    for (i = 1; i <= 5; i++) {
-        for (j = 1; j <= 2 * i - 1; j++)
+    int n = 5;
+    for(int i=1;i<=2*n-1;i+=2){
+        for(int j=1;j<=i;j++)
             printf("*");
         printf("\n");
     }
-    for (i = 4; i >= 1; i--) {
-        for (j = 1; j <= 2 * i - 1; j++)
+    for(int i=2*n-3;i>=1;i-=2){
+        for(int j=1;j<=i;j++)
             printf("*");
         printf("\n");
     }

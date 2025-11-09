@@ -1,14 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    char str[1000];
-    int i=0;
+    char str[100];
     printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    printf("Characters:\n");
-    while(str[i] != '\0' && str[i] != '\n'){
+    scanf(" %[^\n]", str);
+    printf("Characters in the string:\n");
+    for(int i=0; str[i]!='\0'; i++)
         printf("%c\n", str[i]);
-        i++;
-    }
     return 0;
 }

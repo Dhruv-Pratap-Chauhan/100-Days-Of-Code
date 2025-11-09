@@ -1,23 +1,16 @@
 #include <stdio.h>
 
 int main() {
-    int n, temp, count = 0;
-    scanf("%d", &n);
-    int a[n];
-    for (int i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (a[j] > a[j + 1]) {
-                temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-                count++;
-            }
+    int r, c, sum=0;
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &r, &c);
+    int mat[r][c];
+    printf("Enter matrix elements:\n");
+    for(int i=0;i<r;i++)
+        for(int j=0;j<c;j++){
+            scanf("%d",&mat[i][j]);
+            sum += mat[i][j];
         }
-    }
-    for (int i = 0; i < n; i++)
-        printf("%d ", a[i]);
-    printf("\nSwaps: %d\n", count);
+    printf("Sum of all elements: %d\n", sum);
     return 0;
 }

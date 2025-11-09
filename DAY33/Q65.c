@@ -1,16 +1,21 @@
 #include <stdio.h>
 
 int main() {
-    int n, pos, val;
-    scanf("%d", &n);
-    int a[n + 1];
-    for (int i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-    scanf("%d %d", &pos, &val);
-    for (int i = n; i >= pos; i--)
-        a[i] = a[i - 1];
-    a[pos - 1] = val;
-    for (int i = 0; i <= n; i++)
-        printf("%d ", a[i]);
+    int n, key, index=-1;
+    printf("Enter number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter elements in sorted order: ");
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    printf("Enter element to search: ");
+    scanf("%d",&key);
+    int l=0,h=n-1;
+    while(l<=h){
+        int mid=(l+h)/2;
+        if(arr[mid]==key){ index=mid; break; }
+        else if(arr[mid]<key) l=mid+1;
+        else h=mid-1;
+    }
+    printf("Found at index: %d\n", index);
     return 0;
 }

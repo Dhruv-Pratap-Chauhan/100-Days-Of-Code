@@ -2,11 +2,13 @@
 
 int main() {
     int n;
-    scanf("%d", &n);
-    int a[n];
-    for (int i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-    for (int i = 0; i < n; i++)
-        printf("%d ", a[i]);
+    printf("Enter number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter elements: ");
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    printf("Array elements: ");
+    for(int i=0;i<n;i++) printf("%d ",arr[i]);
+    printf("\n");
     return 0;
 }

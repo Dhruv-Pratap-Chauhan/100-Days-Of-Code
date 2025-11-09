@@ -1,20 +1,17 @@
 #include <stdio.h>
 
 int main() {
-    int n, search, found = 0;
-    scanf("%d", &n);
-    int a[n];
-    for (int i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-    scanf("%d", &search);
-    for (int i = 0; i < n; i++) {
-        if (a[i] == search) {
-            printf("Found at position %d\n", i + 1);
-            found = 1;
-            break;
-        }
+    int n, key, index=-1;
+    printf("Enter number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter elements: ");
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    printf("Enter element to search: ");
+    scanf("%d",&key);
+    for(int i=0;i<n;i++){
+        if(arr[i]==key){ index=i; break; }
     }
-    if (!found)
-        printf("Not found\n");
+    printf("Found at index: %d\n", index);
     return 0;
 }

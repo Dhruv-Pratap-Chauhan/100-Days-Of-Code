@@ -1,17 +1,21 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, j;
-    printf("Enter size of square matrix: ");
-    scanf("%d",&n);
-    int mat[n][n];
-    printf("Enter elements:\n");
-    for(i=0;i<n;i++) for(j=0;j<n;j++) scanf("%d",&mat[i][j]);
-    printf("Diagonal traversal: ");
-    for(i=0;i<n;i++) for(j=0;j<n;j++){
-        int k=i+j;
-        for(int x=0;x<n;x++) for(int y=0;y<n;y++)
-            if(x+y==k) printf("%d ", mat[x][y]);
+    int r,c;
+    printf("Enter rows and columns: ");
+    scanf("%d %d",&r,&c);
+    int mat[r][c];
+    printf("Enter matrix elements:\n");
+    for(int i=0;i<r;i++)
+        for(int j=0;j<c;j++)
+            scanf("%d",&mat[i][j]);
+
+    printf("Diagonal traversal:\n");
+    for(int d=0;d<r+c-1;d++){
+        for(int i=0;i<r;i++){
+            int j=d-i;
+            if(j>=0 && j<c) printf("%d ", mat[i][j]);
+        }
     }
     printf("\n");
     return 0;

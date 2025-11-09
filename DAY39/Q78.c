@@ -1,15 +1,16 @@
 #include <stdio.h>
 
 int main() {
-    int n, pos = 0, neg = 0, zero = 0;
-    scanf("%d", &n);
-    int a[n];
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
-        if (a[i] > 0) pos++;
-        else if (a[i] < 0) neg++;
-        else zero++;
-    }
-    printf("Positive=%d, Negative=%d, Zero=%d\n", pos, neg, zero);
+    int n, sum=0;
+    printf("Enter size of square matrix: ");
+    scanf("%d",&n);
+    int mat[n][n];
+    printf("Enter matrix elements:\n");
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++){
+            scanf("%d",&mat[i][j]);
+            if(i==j) sum += mat[i][j];
+        }
+    printf("Sum of main diagonal: %d\n", sum);
     return 0;
 }

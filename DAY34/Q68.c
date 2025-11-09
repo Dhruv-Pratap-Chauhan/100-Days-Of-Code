@@ -1,21 +1,17 @@
 #include <stdio.h>
 
 int main() {
-    int n1, n2;
-    scanf("%d", &n1);
-    int a[n1];
-    for (int i = 0; i < n1; i++)
-        scanf("%d", &a[i]);
-    scanf("%d", &n2);
-    int b[n2];
-    for (int i = 0; i < n2; i++)
-        scanf("%d", &b[i]);
-    int merged[n1 + n2];
-    for (int i = 0; i < n1; i++)
-        merged[i] = a[i];
-    for (int i = 0; i < n2; i++)
-        merged[n1 + i] = b[i];
-    for (int i = 0; i < n1 + n2; i++)
-        printf("%d ", merged[i]);
+    int n, pos;
+    printf("Enter number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter elements: ");
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    printf("Enter position to delete: ");
+    scanf("%d",&pos);
+    for(int i=pos;i<n-1;i++) arr[i]=arr[i+1];
+    printf("Array after deletion: ");
+    for(int i=0;i<n-1;i++) printf("%d ",arr[i]);
+    printf("\n");
     return 0;
 }
